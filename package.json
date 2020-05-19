@@ -1,0 +1,33 @@
+{
+  "name": "myapi",
+  "version": "1.0.0",
+  "description": "RESTful myApi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SusanneGut/myApi.git"
+  },
+  "keywords": [
+    "API",
+    "RESTful"
+  ],
+  "author": "Susanne Gut",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SusanneGut/myApi/issues"
+  },
+  "homepage": "https://github.com/SusanneGut/myApi#readme",
+  "dependencies": {
+    "-": "0.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.15",
+    "npm": "^6.14.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
