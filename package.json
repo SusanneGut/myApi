@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "concurrently \"npm run server\" \"npm run app\"",
+    "server": "nodemon server.js",
+    "app": "node start-app.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
     "npm": "^6.14.5"
   },
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "nodemon": "^2.0.4"
   }
 }

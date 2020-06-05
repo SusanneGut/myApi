@@ -5,7 +5,7 @@ var mongoose = require("mongoose"),
 
 exports.list_all_tasks = function(req, res) {
   Task.find({}, function(err, task) {
-    if (err) res.send(err);
+    if (err) res.send(err).status(400);
     res.json(task);
   });
 };

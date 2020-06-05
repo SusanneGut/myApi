@@ -1,6 +1,6 @@
 var express = require("express"),
   app = express(),
-  port = process.env.PORT || 3000,
+  port = process.env.PORT || 3001,
   mongoose = require("mongoose"),
   Task = require("./api/models/myApiModel"), //loading the created model
   bodyParser = require("body-parser");
@@ -16,13 +16,9 @@ mongoose.connect("mongodb://localhost/myApidb", {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(function(req, res) {
-  res.status(404).send({ url: req.originalUrl + " not found" });
-}); //redirect and respond whenever a wrong route is entered on the site
-
 var routes = require("./api/routes/myApiRoutes"); //importing route
 routes(app); //register route
 
 app.listen(port);
 
-console.log("myApi server started on: " + port);
+console.log("myApi server started on port: " + port);
