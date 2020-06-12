@@ -5,8 +5,14 @@ module.exports = function(app) {
   //myList Routes
   app
     .route("/tasks")
-    .get(myList.list_all_tasks)
-    .post(myList.create_a_task);
+    .post(myList.create_a_task)
+    .get(myList.list_all_tasks, (req, res) => {
+      const param = req.query.q;
+      if (!param) {
+        res.json({ error: "Missing required parameter 'q" });
+        return;
+      }
+    });
 
   app
     .route("/tasks/:taskId")

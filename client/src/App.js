@@ -22,9 +22,10 @@ class App extends Component {
     const { selectedTasks } = this.state;
 
     return (
-      <div>
+      <div className="ui text container">
         <SelectedTasks tasks={selectedTasks} onTaskClick={this.removeTask} />
         <TaskSearch onTaskClick={this.addTask} />
+        {JSON.stringify(selectedTasks)}
       </div>
     );
   }

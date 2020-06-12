@@ -1,5 +1,5 @@
 function search(query, cb) {
-  fetch(`/api/tasks?q=${query}`, {
+  return fetch(`/api/tasks?q=${query}`, {
     accept: "application/json"
   })
     .then(checkStatus)
@@ -24,5 +24,4 @@ function parseJSON(response) {
 }
 
 const Client = { search };
-
 export default Client;
